@@ -1,9 +1,9 @@
-import "./App.css";
-
+import './App.css';
+import { FeedBack } from './components/Feedback/Feedback';
 function App() {
   return (
-    <div className="App">
-      <h1>hi</h1>
+    <div className="root">
+      <FeedBack />
     </div>
   );
 }

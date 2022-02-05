@@ -32,15 +32,18 @@ class FeedBack extends Component {
       <div>
         <GlobalStyle />
         <Container>
-          <Section title="Please leave feedback" />
-          <FeedBackOption options={Object.keys(this.state)} onLeaveFeedback={this.handleClick} />
-          <Statistics
-            good={good}
-            neutral={neutral}
-            bad={bad}
-            total={this.countTotalFeedback()}
-            positivePercentage={this.countPositiveFeedbackPercentage(this.countTotalFeedback())}
-          />
+          <Section title="Please leave feedback">
+            <FeedBackOption options={Object.keys(this.state)} onLeaveFeedback={this.handleClick} />
+          </Section>
+          <Section title="Statistics">
+            <Statistics
+              good={good}
+              neutral={neutral}
+              bad={bad}
+              total={this.countTotalFeedback()}
+              positivePercentage={this.countPositiveFeedbackPercentage(this.countTotalFeedback())}
+            />
+          </Section>
         </Container>
       </div>
     );

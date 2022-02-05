@@ -4,7 +4,7 @@ import { Title } from './StatisticsStyle';
 const Statistics = ({ good, neutral, bad, total, positivePercentage }) => {
   return (
     <>
-      <Title>Statistics</Title>
+      <Title></Title>
       <ul>
         <li>Good:{good}</li>
         <li>Neutral:{neutral}</li>

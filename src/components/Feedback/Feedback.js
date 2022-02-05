@@ -1,4 +1,9 @@
 import React, { Component } from 'react/';
+import { Statistics } from '../Statistics/Statistics';
+import { FeedBackOption } from './FeedBackOptions/FeedBackOption';
+import { Section } from '../Section/Section';
+import { GlobalStyle } from '../GlobalStyle/GlobalStyle';
+import { Container } from '../Container/Container';
 
 class FeedBack extends Component {
   state = {
@@ -8,28 +13,35 @@ class FeedBack extends Component {
   };
   handleClick = key => {
     this.setState(prevState => {
-      console.log(prevState[key]);
       return { [key]: prevState[key] + 1 };
     });
   };
-  countTotalFeedback = () => {};
-  countPositiveFeedbackPercentage = () => {};
+  countTotalFeedback = () => {
+    const { good, neutral, bad } = this.state;
+    return good + neutral + bad;
+  };
+  countPositiveFeedbackPercentage = total => {
+    const { good } = this.state;
+
+    return total > 0 ? Math.round((good * 100) / total) : 0;
+  };
+
   render() {
     const { good, neutral, bad } = this.state;
     return (
       <div>
-        <h2>Please leave feedback</h2>
-        {Object.keys(this.state).map(key => (
-          <button type="button" key={key} onClick={() => this.handleClick(key)}>
-            {key}
-          </button>
-        ))}
-        <h2>Statistics</h2>
-        <ul>
-          <li>Good:{good}</li>
-          <li>Neutral:{neutral}</li>
-          <li>Bad:{bad}</li>
-        </ul>
+        <GlobalStyle />
+        <Container>
+          <Section title="Please leave feedback" />
+          <FeedBackOption options={Object.keys(this.state)} onLeaveFeedback={this.handleClick} />
+          <Statistics
+            good={good}
+            neutral={neutral}
+            bad={bad}
+            total={this.countTotalFeedback()}
+            positivePercentage={this.countPositiveFeedbackPercentage(this.countTotalFeedback())}
+          />
+        </Container>
       </div>
     );
   }

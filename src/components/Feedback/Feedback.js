@@ -1,10 +1,9 @@
 import React, { Component } from 'react/';
-import { Statistics } from '../Statistics/Statistics';
-import { FeedBackOption } from './FeedBackOptions/FeedBackOption';
-import { Section } from '../Section/Section';
-import { GlobalStyle } from '../GlobalStyle/GlobalStyle';
-
-import { Container } from '../Container/Container';
+import Statistics from '../Statistics';
+import FeedBackOption from './FeedBackOptions';
+import Section from '../Section';
+import GlobalStyle from '../GlobalStyle';
+import Container from '../Container';
 
 class FeedBack extends Component {
   state = {

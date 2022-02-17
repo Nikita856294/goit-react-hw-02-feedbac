@@ -40,4 +40,4 @@ body {
 
 `;
 
-export { GlobalStyle };
+export default GlobalStyle;

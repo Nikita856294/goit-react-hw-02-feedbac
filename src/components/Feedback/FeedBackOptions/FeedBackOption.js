@@ -18,4 +18,4 @@ FeedBackOption.propTypes = {
   onLeaveFeedback: PropTypes.func.isRequired,
 };
 
-export { FeedBackOption };
+export default FeedBackOption;

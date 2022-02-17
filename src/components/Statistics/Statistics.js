@@ -20,7 +20,7 @@ const Statistics = ({ good, neutral, bad, total, positivePercentage }) => {
   );
 };
 
-export { Statistics };
+export default Statistics;
 
 Statistics.propTypes = {
   good: PropTypes.number.isRequired,

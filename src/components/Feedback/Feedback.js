@@ -3,6 +3,7 @@ import { Statistics } from '../Statistics/Statistics';
 import { FeedBackOption } from './FeedBackOptions/FeedBackOption';
 import { Section } from '../Section/Section';
 import { GlobalStyle } from '../GlobalStyle/GlobalStyle';
+
 import { Container } from '../Container/Container';
 
 class FeedBack extends Component {

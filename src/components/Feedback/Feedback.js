@@ -50,4 +50,4 @@ class FeedBack extends Component {
   }
 }
 
-export { FeedBack };
+export default FeedBack;
